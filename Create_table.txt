@@ -1,0 +1,47 @@
+CREATE TABLE address(
+address_id INT NOT NULL PRIMARY KEY,
+street VARCHAR(25) NOT NULL,
+street_num INT NOT NULL,
+city VARCHAR(25) NOT NULL,
+postcode INT NOT NULL);
+
+CREATE TABLE blood_bank(
+bank_id INT NOT NULL PRIMARY KEY,
+address_id INT NOT NULL REFERENCES address (address_id),
+bank_name VARCHAR(30) NOT NULL,
+A_pos INT,
+A_neg INT,
+B_pos INT,
+B_neg INT,
+O_pos INT,
+O_neg INT,
+AB_pos INT,
+AB_neg INT,
+UNIQUE(address_id));
+
+CREATE TABLE contact(
+bank_id INT NOT NULL REFERENCES blood_bank (bank_id),
+phone VARCHAR(11) NOT NULL,
+UNIQUE(bank_id));
+
+CREATE TABLE staff(
+staff_id INT NOT NULL PRIMARY KEY,
+bank_id INT NOT NULL REFERENCES blood_bank (bank_id),
+staff_name VARCHAR(15) NOT NULL,
+job_title VARCHAR(10) NOT NULL,
+phone VARCHAR(11) NOT NULL,
+salary INT NOT NULL);
+
+CREATE TABLE donors(
+donor_id INT NOT NULL PRIMARY KEY,
+bank_id INT NOT NULL REFERENCES blood_bank (bank_id),
+address_id INT NOT NULL REFERENCES address (address_id),
+name VARCHAR(20) NOT NULL,
+age INT NOT NULL,
+sex VARCHAR(1) NOT NULL,
+phone VARCHAR(11) NOT NULL);
+
+
+
+
+

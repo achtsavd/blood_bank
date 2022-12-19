@@ -1,0 +1,68 @@
+INSERT INTO address (address_id, street, street_num, city, postcode) VALUES (1001,'korai',5,'bolos', 4223);
+INSERT INTO address (address_id, street, street_num, city, postcode) VALUES (1002,'kouma',2,'Larissa', 4263);
+INSERT INTO address (address_id, street, street_num, city, postcode) VALUES (1003,'serifou',7,'Katerini', 4533);
+INSERT INTO address (address_id, street, street_num, city, postcode) VALUES (1004,'sifnou',1,'Komotini', 4219);
+INSERT INTO address (address_id, street, street_num, city, postcode) VALUES (1005,'ermou',6,'Athina', 4333);
+INSERT INTO address (address_id, street, street_num, city, postcode) VALUES (1006,'miaouli',3,'Peiraias', 4719);
+INSERT INTO address (address_id, street, street_num, city, postcode) VALUES (1007,'tsimiski',13,'Thessaloniki', 4853);
+INSERT INTO address (address_id, street, street_num, city, postcode) VALUES (1008,'larissis',18,'Trikala', 4515);
+
+INSERT INTO blood_bank (bank_id, address_id, bank_name, a_pos, a_neg, b_pos, b_neg, o_pos, o_neg, ab_pos, ab_neg) VALUES (1501, 1001, 'Quantam Foundation', 12, 4, 30, 10, 15, 7, 14, 8);
+INSERT INTO blood_bank (bank_id, address_id, bank_name, a_pos, a_neg, b_pos, b_neg, o_pos, o_neg, ab_pos, ab_neg) VALUES (1502, 1002, 'Larissa Blood Center', 15, 9, 25, 8, 25, 9, 2, 5);
+INSERT INTO blood_bank (bank_id, address_id, bank_name, a_pos, a_neg, b_pos, b_neg, o_pos, o_neg, ab_pos, ab_neg) VALUES (1503, 1003, 'Katerini Blood Donation', 18, 4, 20, 12, 10, 0, 14, 23);
+INSERT INTO blood_bank (bank_id, address_id, bank_name, a_pos, a_neg, b_pos, b_neg, o_pos, o_neg, ab_pos, ab_neg) VALUES (1504, 1004, 'Blood Bank Komotini', 13, 2, 5, 16, 14, 23, 24, 18);
+INSERT INTO blood_bank (bank_id, address_id, bank_name, a_pos, a_neg, b_pos, b_neg, o_pos, o_neg, ab_pos, ab_neg) VALUES (1505, 1005, 'Blood Center Athina', 33, 12, 50, 11, 13, 17, 34, 38);
+INSERT INTO blood_bank (bank_id, address_id, bank_name, a_pos, a_neg, b_pos, b_neg, o_pos, o_neg, ab_pos, ab_neg) VALUES (1506, 1006, 'Red Center Peiraias', 13, 22, 5, 20, 17, 18, 19, 28);
+INSERT INTO blood_bank (bank_id, address_id, bank_name, a_pos, a_neg, b_pos, b_neg, o_pos, o_neg, ab_pos, ab_neg) VALUES (1507, 1007, 'Red Center Thessaloniki', 63, 12, 45, 10, 15, 14, 11, 8);
+INSERT INTO blood_bank (bank_id, address_id, bank_name, a_pos, a_neg, b_pos, b_neg, o_pos, o_neg, ab_pos, ab_neg) VALUES (1508, 1008, 'Blood Bank Trikala', 0, 16, 5, 10, 50, 7, 24, 17);
+
+INSERT INTO contact (bank_id, phone) VALUES (1501, 302543458);
+INSERT INTO contact (bank_id, phone) VALUES (1502, 304573431);
+INSERT INTO contact (bank_id, phone) VALUES (1503, 034543439);
+INSERT INTO contact (bank_id, phone) VALUES (1504, 450543465);
+INSERT INTO contact (bank_id, phone) VALUES (1505, 174543413);
+INSERT INTO contact (bank_id, phone) VALUES (1506, 194543491);
+INSERT INTO contact (bank_id, phone) VALUES (1507, 227543455);
+INSERT INTO contact (bank_id, phone) VALUES (1508, 785543245);
+
+
+INSERT INTO staff (staff_id, bank_id, staff_name, job_title, phone, salary) VALUES (2001, 1501, 'Nikos', 'Guard', 6963574128, 880);
+INSERT INTO staff (staff_id, bank_id, staff_name, job_title, phone, salary) VALUES (2002, 1501, 'Panagiotis', 'tachnician', 6963574128, 880);
+INSERT INTO staff (staff_id, bank_id, staff_name, job_title, phone, salary) VALUES (2003, 1501, 'Katerina', 'Nurse', 6963574128, 880);
+INSERT INTO staff (staff_id, bank_id, staff_name, job_title, phone, salary) VALUES (2004, 1503, 'Paulos', 'Doctor', 6963574128, 880);
+INSERT INTO staff (staff_id, bank_id, staff_name, job_title, phone, salary) VALUES (2005, 1501, 'Vasilis', 'Manager', 6963574128, 880);
+INSERT INTO staff (staff_id, bank_id, staff_name, job_title, phone, salary) VALUES (2006, 1501, 'Giannis', 'Nurse', 6963574128, 880);
+INSERT INTO staff (staff_id, bank_id, staff_name, job_title, phone, salary) VALUES (2007, 1501, 'Dimitris', 'Doctor', 6963574128, 880);
+INSERT INTO staff (staff_id, bank_id, staff_name, job_title, phone, salary) VALUES (2008, 1503, 'Dimos', 'Guard', 6963574128, 880);
+INSERT INTO staff (staff_id, bank_id, staff_name, job_title, phone, salary) VALUES (2009, 1504, 'Giorgos', 'Nurse', 6963574128, 880);
+INSERT INTO staff (staff_id, bank_id, staff_name, job_title, phone, salary) VALUES (20010, 1504, 'Eleni', 'Guard', 6963574128, 880);
+INSERT INTO staff (staff_id, bank_id, staff_name, job_title, phone, salary) VALUES (20011, 1505, 'Thomas', 'Guard', 6963574128, 880);
+INSERT INTO staff (staff_id, bank_id, staff_name, job_title, phone, salary) VALUES (20012, 1508, 'Stelios', 'Nurse', 6963574128, 880);
+INSERT INTO staff (staff_id, bank_id, staff_name, job_title, phone, salary) VALUES (20013, 1506, 'Kwstas', 'Doctor', 6963574128, 880);
+INSERT INTO staff (staff_id, bank_id, staff_name, job_title, phone, salary) VALUES (20014, 1507, 'Maria', 'Doctor', 6963574128, 880);
+
+INSERT INTO donors (donor_id, bank_id, address_id, name, age, sex, phone) VALUES (101, 1501, 1001, 'Petros', 22, 'M', 6976852418);
+INSERT INTO donors (donor_id, bank_id, address_id, name, age, sex, phone) VALUES (102, 1502, 1002, 'Antonis', 29, 'M', 6976852490);
+INSERT INTO donors (donor_id, bank_id, address_id, name, age, sex, phone) VALUES (103, 1502, 1002, 'Aggelos', 26, 'M', 6999852433);
+INSERT INTO donors (donor_id, bank_id, address_id, name, age, sex, phone) VALUES (104, 1503, 1003, 'Matina', 34, 'F', 6986852431);
+INSERT INTO donors (donor_id, bank_id, address_id, name, age, sex, phone) VALUES (105, 1504, 1004, 'Dionisis', 27, 'M', 6978852499);
+INSERT INTO donors (donor_id, bank_id, address_id, name, age, sex, phone) VALUES (106, 1506, 1006, 'Sokratis', 24, 'M', 6978852455);
+INSERT INTO donors (donor_id, bank_id, address_id, name, age, sex, phone) VALUES (107, 1508, 1008, 'Giannis', 20, 'M', 6972852441);
+INSERT INTO donors (donor_id, bank_id, address_id, name, age, sex, phone) VALUES (108, 1507, 1007, 'Athina', 24, 'F', 6972852488);
+INSERT INTO donors (donor_id, bank_id, address_id, name, age, sex, phone) VALUES (109, 1506, 1006, 'Eirini', 34, 'F', 6972852778);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

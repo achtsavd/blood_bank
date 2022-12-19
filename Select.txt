@@ -1,0 +1,26 @@
+1)Oι υπάλληλοι που το δευτερο γράμμα του ονοματος τους ειναι "α"
+SELECT * FROM staff WHERE staff_name like '_a%';
+
+2)Λίστα με αριθμό τηλεφώνου και μισθο γιατρων και νοσοκομων με το ονομα τους
+SELECT job_title, staff_name, phone, salary FROM staff WHERE job_title in('Nurse', 'Doctor');
+
+3)Λίστα με πληροφοριες για τις τραπεζες και τις διευθυνσεις τους
+SELECT b.bank_id, b.bank_name, a.street, a.street_num, a.city, a.postcode FROM address a, blood_bank b WHERE a.address_id = b.address_id;
+
+4)Λίστα με ολες τις πληροφοριες για τις τραπεζες και τα τηλεφώνα επικοινωνιας
+SELECT b.bank_id, b.bank_name, b.o_pos as "O(+)", b.o_neg as "O(-)", b.a_pos as "A(+)", b.a_neg as "A(-)", b.b_pos as "B(+)", b.b_neg as "B(-)", b.ab_pos as "AB(+)", b.ab_neg as "AB(-)", c.phone FROM blood_bank b, contact c WHERE b.bank_id = c.bank_id;
+
+5)Τους δότες με ηλικια<25
+SELECT donor_id, name, sex, phone FROM donors WHERE age<25;
+
+6)Λίστα με τον μικροτερο, τον μεγαλυτερο μισθο και τον μεσο ορο για τους υπαλληλους της καθε τραπεζας
+SELECT b.bank_name, MIN(s.salary), MAX(s.salary), ROUND(AVG(s.salary), 2) FROM blood_bank b, staff s WHERE s.bank_id=b.bank_id GROUP BY b.bank_name;
+
+7)Λίστα με τους εργαζομενους καθε τραπεζας, τον τιτλο εργασιας τους και τον μισθο τους
+SELECT b.bank_id, b.bank_name, s.staff_name, s.job_title, s.salary FROM blood_bank b, staff s WHERE b.bank_id=s.bank_id;
+
+8)Λίστα με τους εργαζομενους μιας τραπεζας, τον τιτλο εργασιας τους και τον μισθο τους
+SELECT b.bank_name, s.staff_name, s.job_title, s.salary FROM blood_bank b, staff s WHERE b.bank_id=s.bank_id AND b.bank_id=1501;
+
+9)Λίστα με ονομα και ηλικια των δοτων και το ονομα της τραπεζας
+SELECT d.name, d.age, b,bank_name FROM donors d, blood_bank b WHERE b.bank_id=d.bank_id;
